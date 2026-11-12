@@ -130,25 +130,3 @@ Reflect on the outcome of the lab exercises. In particular, consider the followi
 > &nbsp;
 >
 > &nbsp;
-
-## 4 Examination
-
-Typical exam questions on this material are [1, chapter 4, p. 111, Exercises 1, 2, 3, 7 and chapter 5, p. 133–134, Exercises 1, 2].
-
-## References
-
-[1] Naik K. and Tripathy P., *Software Testing and Quality Assurance*, John Wiley & Sons, 2008.
-
-## Appendix 1
-
-### Test case description
-
-| Test ID | Method Under Test | Test Purpose | Input | Expected Result | Remarks |
-|---------|-------------------|--------------|-------|-----------------|---------|
-| TC5     | `isInsurable()`   | In range     | 44    | True            | None    |
-
-### Defect report
-
-| Defect ID | Method Under Test | Description of Defect | Expected Result | Actual Result | Remarks |
-|-----------|-------------------|-----------------------|-----------------|---------------|---------|
-| DR3       | `isInsurable()`   | When individual is female over 85 the output is True, where actual output should be False. | False | True | Severe Defect |
