@@ -62,11 +62,26 @@ Based on the flow graph, prepare a minimum set of test cases for statement and b
 
 > **Svar:**
 >
-> &nbsp;
+>     testValidInput
 >
-> &nbsp;
+>     testThirtyOneDayMonthNormalDay
+>     testThirtyOneDayMonthBoundary
 >
-> &nbsp;
+>     testThirtyDayMonthNormalDay
+>     testThirtyDayMonthBoundary
+>     testThirtyDayMonthInvalidInput
+>
+>     testDecemberNormalDay
+>     testDecemberBoundary
+>     testDecemberInvalidYear
+>
+>     testFebruaryNormalDay (not 28)
+>     testFebruary28WithLeapYear
+>     testFebruary28
+>     testFebruary29
+>     testFebruary29WithLeapYear
+>     testFebruaryInvalidDay (over 29)
+>
 
 ### Assignment 7
 If you haven't used JUnit before, read the instructions available at <http://junit.org/junit4/> (for example, start by looking under the tag "Getting started"). Ensure that you know how to use JUnit before you arrive at the exercise where you are supposed to implement test cases in the tool.
