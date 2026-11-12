@@ -38,15 +38,13 @@ b) calculate the McCabe's Cyclomatic Complexity measure of that method.
 
 > **Svar a) – Flödesgraf:**
 >
-> ![Flödesgraf för run-metoden i NextDate](flowgraph.png)
+> ![Graf för run i NextDate](flowgraph.png)
 >
-> [Redigerbar draw.io-version](NextDate_CFG.drawio) · [Mermaid-källkod](../NextDate_CFG.mmd)
+
 
 > **Svar b):**
 >
-> &nbsp;
->
-> &nbsp;
+> Det finns 20st beslutspunkter eller romberva så 20+1=21
 
 ### Assignment 5
 Analyze the code and calculate the minimum number of test cases if the goal is:
@@ -55,11 +53,9 @@ b) 100% Branch coverage
 
 > **Svar:**
 >
-> &nbsp;
+> 15 tester för statement covarage för det finns 15 sluthållplatser i grafen
 >
-> &nbsp;
->
-> &nbsp;
+> 21 tester för branch covarage om man räknar alla unika vägar grafen kan gå nedåt
 
 ### Assignment 6
 Based on the flow graph, prepare a minimum set of test cases for statement and branch coverage. You may re-use test cases for the different coverage types, but have **separate sets of test cases for each coverage type** so that you can compare the coverage types, e.g. no. of test cases, bugs found etc.
@@ -75,13 +71,6 @@ Based on the flow graph, prepare a minimum set of test cases for statement and b
 ### Assignment 7
 If you haven't used JUnit before, read the instructions available at <http://junit.org/junit4/> (for example, start by looking under the tag "Getting started"). Ensure that you know how to use JUnit before you arrive at the exercise where you are supposed to implement test cases in the tool.
 
-> **Svar:**
->
-> &nbsp;
->
-> &nbsp;
->
-> &nbsp;
 
 ## 3 Exercise (on computer)
 
@@ -100,22 +89,14 @@ If you didn't cover all statements and branches, implement more test cases to do
 
 > **Svar:**
 >
-> &nbsp;
->
-> &nbsp;
->
-> &nbsp;
+> Finns en branch som är onårbar i February branchen längst ned
 
 ### Assignment 9
 Now turn to your favourite generative AI tool and prompt it to generate test cases for the `NextDate` program.
 
 > **Svar:**
 >
-> &nbsp;
->
-> &nbsp;
->
-> &nbsp;
+>Bad claude göra tester som finns i NextDateClaudeTests.java
 
 ### Assignment 10
 Reflect on the outcome of the lab exercises. In particular, consider the following questions:

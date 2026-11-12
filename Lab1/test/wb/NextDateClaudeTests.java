@@ -13,7 +13,7 @@ import static org.junit.Assert.assertTrue;
  * and branch coverage. Expected values follow the real calendar, so a test
  * that fails points to a defect in NextDate.
  */
-public class NextDateCoverageTest {
+public class NextDateClaudeTests {
 
     private String next(int month, int day, int year) {
         return new NextDate(month, day, year).run(month, day, year);
