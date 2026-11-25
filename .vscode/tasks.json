@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Lab3: SpotBugs DebugIntro (report)",
+            "type": "shell",
+            "command": "mvn -q compile spotbugs:check",
+            "options": { "cwd": "${workspaceFolder}/Lab3/DebugIntro" },
+            "problemMatcher": []
+        },
+        {
+            "label": "Lab3: SpotBugs DebugIntro (GUI)",
+            "type": "shell",
+            "command": "mvn -q compile spotbugs:spotbugs spotbugs:gui",
+            "options": { "cwd": "${workspaceFolder}/Lab3/DebugIntro" },
+            "problemMatcher": []
+        },
+        {
+            "label": "Lab3: SpotBugs DebugReqSimili (report)",
+            "type": "shell",
+            "command": "mvn -q compile spotbugs:check",
+            "options": { "cwd": "${workspaceFolder}/Lab3/DebugReqSimili" },
+            "problemMatcher": []
+        },
+        {
+            "label": "Lab3: SpotBugs DebugReqSimili (GUI)",
+            "type": "shell",
+            "command": "mvn -q compile spotbugs:spotbugs spotbugs:gui",
+            "options": { "cwd": "${workspaceFolder}/Lab3/DebugReqSimili" },
+            "problemMatcher": []
+        }
+    ]
+}
