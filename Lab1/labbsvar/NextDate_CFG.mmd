@@ -1,0 +1,73 @@
+flowchart TB
+  subgraph Run["run(month, day, year)"]
+    direction TB
+
+    n1([1. Start]) --> n2{"2. if (day < 1)"}
+    n2 -- true --> n3
+    n2 -- false --> n4{"4. if (month < 1)"}
+    n4 -- true --> n3
+    n4 -- false --> n5{"5. if (month > 12)"}
+    n5 -- true --> n3
+    n5 -- false --> n6{"6. if (year < 1801)"}
+    n6 -- true --> n3
+    n6 -- false --> n7{"7. if (year > 2021)"}
+    n7 -- true --> n3
+    n7 -- false --> n8["8. tomorrowDay = day<br/>tomorrowMonth = month<br/>tomorrowYear = year"]
+
+    n8 --> n9{"9. if (isThirtyOneDayMonth(month))"}
+    n9 -- true --> n10{"10. if (day < 31)"}
+    n10 -- true --> n11["11. tomorrowDay = day + 1"]
+    n10 -- false --> n12["12. tomorrowDay = 1<br/>tomorrowMonth = month + 1"]
+    n11 --> n38
+    n12 --> n38
+
+    n9 -- false --> n13{"13. if (isThirtyDayMonth(month))"}
+    n13 -- true --> n14{"14. if (day < 30)"}
+    n14 -- true --> n15["15. tomorrowDay = day + 1"]
+    n15 --> n38
+    n14 -- false --> n16{"16. if (day == 30)"}
+    n16 -- true --> n17["17. tomorrowDay = 1<br/>tomorrowMonth = month + 1"]
+    n16 -- false --> n18
+    n17 --> n38
+
+    n13 -- false --> n19{"19. if (isDecember(month))"}
+    n19 -- true --> n20{"20. if (day <= 31)"}
+    n20 -- true --> n21["21. tomorrowDay = day + 1"]
+    n21 --> n38
+    n20 -- false --> n22["22. tomorrowDay = 1<br/>tomorrowMonth = 1"]
+    n22 --> n23{"23. if (year == 2021)"}
+    n23 -- true --> n24
+    n23 -- false --> n25["25. tomorrowYear = year + 1"]
+    n25 --> n38
+
+    n19 -- false --> n26{"26. if (isFebruary(month))"}
+    n26 -- true --> n27{"27. if (day < 28)"}
+    n27 -- true --> n28["28. tomorrowDay = day + 1"]
+    n28 --> n38
+    n27 -- false --> n29{"29. if (day == 28)"}
+    n29 -- true --> n30{"30. if (isLeapYear(year))"}
+    n30 -- true --> n31["31. tomorrowDay = 29"]
+    n30 -- false --> n32["32. tomorrowDay = 1<br/>tomorrowMonth = 3"]
+    n31 --> n38
+    n32 --> n38
+
+    n29 -- false --> n33{"33. if (day == 29)"}
+    n33 -- true --> n34{"34. if (isLeapYear(year))"}
+    n34 -- true --> n35["35. tomorrowDay = 1<br/>tomorrowMonth = 3"]
+    n34 -- false --> n36
+    n35 --> n38
+    n33 -- false --> n37{"37. if (day > 29)"}
+    n37 -- true --> n36
+    n37 -- false --> n38
+
+    n26 -- false --> n38
+  end
+
+  subgraph Returns["Return values"]
+    direction LR
+    n3["3. return 'invalid Input Date'"]
+    n18["18. return 'Invalid Input Date'"]
+    n24["24. return 'Invalid Next Year'"]
+    n36["36. return 'Invalid Input Date'"]
+    n38["38. return tomorrowMonth + '/' + tomorrowDay + '/' + tomorrowYear"]
+  end
