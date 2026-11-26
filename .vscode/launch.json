@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Lab3: fact (5)",
+            "request": "launch",
+            "mainClass": "fact",
+            "args": "5"
+        },
+        {
+            "type": "java",
+            "name": "Lab3: fib (5)",
+            "request": "launch",
+            "mainClass": "fib",
+            "args": "5"
+        },
+        {
+            "type": "java",
+            "name": "Lab3: InsertionSorter (lab test case)",
+            "request": "launch",
+            "mainClass": "InsertionSorter",
+            "args": "12 5 9 3 2 25 8 19 200 10"
+        },
+        {
+            "type": "java",
+            "name": "Lab3: pick class + type args",
+            "request": "launch",
+            "mainClass": "${command:SpecifyMainClass}",
+            "args": "${command:SpecifyProgramArgs}"
+        }
+    ]
+}

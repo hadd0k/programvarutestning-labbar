@@ -53,7 +53,7 @@ b) 100% Branch coverage
 
 > **Svar:**
 >
-> 15 tester för statement covarage för det finns 15 sluthållplatser i grafen
+> 15 tester för statement coverage
 >
 > 21 tester för branch covarage om man räknar alla unika vägar grafen kan gå nedåt
 
@@ -62,26 +62,46 @@ Based on the flow graph, prepare a minimum set of test cases for statement and b
 
 > **Svar:**
 >
->     testValidInput
+> **Statement tests**
 >
+>     testInvalidInput
 >     testThirtyOneDayMonthNormalDay
 >     testThirtyOneDayMonthBoundary
->
 >     testThirtyDayMonthNormalDay
 >     testThirtyDayMonthBoundary
 >     testThirtyDayMonthInvalidInput
->
 >     testDecemberNormalDay
 >     testDecemberBoundary
 >     testDecemberInvalidYear
->
->     testFebruaryNormalDay (not 28)
+>     testFebruaryNormalDay
 >     testFebruary28WithLeapYear
 >     testFebruary28
->     testFebruary29
 >     testFebruary29WithLeapYear
->     testFebruaryInvalidDay (over 29)
+>     testFebruary29
+>     testFebruaryInvalidDay
 >
+> **Branch tests**
+>
+>     testInvalidDay
+>     testInvalidMonthLow
+>     testInvalidMonthHigh
+>     testInvalidYearLow
+>     testInvalidYearHigh
+>     testThirtyOneDayMonthNormalDay
+>     testThirtyOneDayMonthBoundary
+>     testThirtyDayMonthNormalDay
+>     testThirtyDayMonthBoundary
+>     testThirtyDayMonthInvalidInput
+>     testDecemberNormalDay
+>     testDecemberBoundary
+>     testDecemberInvalidYear
+>     testFebruaryNormalDay
+>     testFebruary28WithLeapYear
+>     testFebruary28
+>     testFebruary29WithLeapYear
+>     testFebruary29
+>     testFebruaryInvalidDay
+>     testJuly
 
 ### Assignment 7
 If you haven't used JUnit before, read the instructions available at <http://junit.org/junit4/> (for example, start by looking under the tag "Getting started"). Ensure that you know how to use JUnit before you arrive at the exercise where you are supposed to implement test cases in the tool.
@@ -125,8 +145,16 @@ Reflect on the outcome of the lab exercises. In particular, consider the followi
 
 > **Svar:**
 >
-> &nbsp;
+>**antal tester**
+>15 st för statement. 20 stycken för branch (en branch är oåtkomlig): 
 >
-> &nbsp;
+> **predicate coverage:**  9 tester till, så att varje delvillkor i hjälpmetoderna uppfylls
 >
-> &nbsp;
+>     isThirtyOneDayMonth   3/5, 5/5, 8/5, 10/5   (januari är redan testad)
+>     isThirtyDayMonth      6/5, 9/5, 11/5        (april är redan testad)
+>     isLeapYear            2/28/1900, 2/28/2000  (sekelår, inte skottår resp. skottår)
+>.
+>
+> **Rader kod:** 152 rader test vs 109 rader i `NextDate.java`,
+>
+> **claude test:** Claude skapade 36 tester, vi gjorde 14 + 20. Claude var nogrannare att testa olika kombinationer av grejor. X med skottår. Testade även ALLA månader vilket gjorde att den upptäckte att juli inte var med. Detta kunde vi även se i våran graf för branch testing.

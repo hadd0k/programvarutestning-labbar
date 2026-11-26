@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class NextDateTest {
+public class NextDateTestOld {
 
     // Replace this helper with the actual call to the method under test.
     private String nextDate(int year, int month, int day) {
