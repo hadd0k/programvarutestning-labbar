@@ -16,11 +16,11 @@ public class fib {
 	 * 
 	 */
     public static int fibonacci (int num) {
-		int calc = 0;  // The value to be returned
+		int calc = 0;  
 	
-		if (num <= 1)  // F(0) = 0, F(1) = 1, assume num >= 0
+		if (num <= 1) 
 		    calc = num;
-		else           // num > 1
+		else    
 		    calc = fibonacci (num - 1) + fibonacci (num);
 
 		return calc;
@@ -52,9 +52,10 @@ public class fib {
 	
 		// Calculate the result
 		try {
-		System.out.println (fibonacci (number));
+		int result = fibonacci(number);
+		System.out.println (result);
 		}
-		catch (Error e) {}
+		catch (Error e) { System.out.println ("Error: " + e); }
 		
     }
 

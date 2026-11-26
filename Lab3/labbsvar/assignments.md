@@ -46,6 +46,12 @@ c) The related slides from the lecture
 Search the web for lists of bugs that are considered the most frequent in Java. Compare this to your own experience. Do you agree? Have frequent bug patterns in mind when you come to the lab.
 
 > **Svar:**
+>NullpointerException
+>
+>Out of bounds
+>
+>off-by-one i loopar och ArrayIndexOutOfBoundsException
+>
 >
 
 
@@ -54,6 +60,7 @@ Search and install SpotBugs on Eclipse Marketplace. Look briefly at the quick pl
 - *(VS Code: SpotBugs körs via Maven-pluginet i stället – redan konfigurerat i båda `pom.xml`.)*
 
 > **Svar:**
+>
 >
 
 
@@ -91,15 +98,12 @@ e) The call stack in the Debug view. Right-click a stack level and select "Drop 
 
 
 ### Assignment 5 – Hunt the first bug
-`fib.java` should recursively calculate Fibonacci numbers but produces no output.
-F(0) = 0, F(1) = 1, F(n) = F(n-1) + F(n-2). Use the debugger to find out why there is no output and correct the error.
-
 > **Svar:**
 >
-> - Symptom:
-> - Hur felet hittades i debuggern:
-> - Orsak:
-> - Rättning:
+> - Symptom: stackoverflow
+>   Hittades med breakpoints. såg att den dog innan printouten.
+> - Orsak: `fibonacci(num - 1) + fibonacci(num)`
+> - Rättning: `fibonacci(num - 1) + fibonacci(num - 2)` ska vara F(n) = F(n-1) + F(n-2)
 
 
 ### Assignment 6 – Less obvious bugs

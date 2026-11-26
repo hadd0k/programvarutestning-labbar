@@ -3,17 +3,9 @@
     "configurations": [
         {
             "type": "java",
-            "name": "fact",
-            "request": "launch",
-            "mainClass": "fact",
-            "projectName": ""
-        },
-        {
-            "type": "java",
             "name": "Lab3: fact (5)",
             "request": "launch",
             "mainClass": "fact",
-            "projectName": "debug-intro",
             "args": "5"
         },
         {
@@ -21,7 +13,6 @@
             "name": "Lab3: fib (5)",
             "request": "launch",
             "mainClass": "fib",
-            "projectName": "debug-intro",
             "args": "5"
         },
         {
@@ -29,7 +20,6 @@
             "name": "Lab3: InsertionSorter (lab test case)",
             "request": "launch",
             "mainClass": "InsertionSorter",
-            "projectName": "debug-intro",
             "args": "12 5 9 3 2 25 8 19 200 10"
         },
         {
@@ -37,7 +27,6 @@
             "name": "Lab3: pick class + type args",
             "request": "launch",
             "mainClass": "${command:SpecifyMainClass}",
-            "projectName": "debug-intro",
             "args": "${command:SpecifyProgramArgs}"
         }
     ]
